@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
+//Starting Screen
 public class StartingPoint extends Activity{
 
 	MediaPlayer ring;
@@ -19,12 +20,12 @@ public class StartingPoint extends Activity{
 		Thread timer = new Thread(){
 			public void run(){
 				try{
-					sleep(9000);
+					sleep(2000);   //9000
 				}catch(InterruptedException ex){
 					ex.printStackTrace();
 				}finally{
-					Intent openStartingPoint = new Intent("com.glasscube.streamer.MAINACTIVITY");
-					startActivity(openStartingPoint);
+					Intent gotoLogin = new Intent("com.glasscube.streamer.SEARCHMUSIC");
+					startActivity(gotoLogin);
 				}
 			}
 		};

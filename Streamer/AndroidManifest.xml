@@ -6,6 +6,7 @@
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:icon="@drawable/ic_launcher"
@@ -21,9 +22,26 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main" >
+            android:label="@string/title_activity_main"
+            android:windowSoftInputMode="stateHidden" >
             <intent-filter>
                 <action android:name="com.glasscube.streamer.MAINACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SearchMusic"
+            android:label="@string/title_activity_main">
+            <intent-filter>
+                <action android:name="com.glasscube.streamer.SEARCHMUSIC" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".authenticator.Authenticator"
+            android:label="@string/title_activity_login" >
+            <intent-filter>
+                <action android:name="com.glasscube.streamer.authenticator.AUTHENTICATOR" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView
+    android:id="@+id/tv0" 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Login"
+    android:textSize="20sp"
+    android:gravity="center"
+    android:textStyle="bold"
+    />
+    
+    <TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Username"
+    />
+    
+    <EditText
+    android:hint="james"
+    android:id="@+id/username"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="true">
+	</EditText>
+	
+	<TextView
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="Password"
+    />
+	
+	<EditText
+    android:hint="*******"
+    android:id="@+id/password"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:singleLine="true">
+	</EditText>
+	
+	<Button
+    android:text="Login"
+    android:id="@+id/bLogin"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+	</Button>
+	
+	<TextView
+    android:id="@+id/tvResponse" 
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text=""
+    />
+
+</LinearLayout>
