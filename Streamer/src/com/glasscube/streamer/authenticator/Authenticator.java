@@ -12,6 +12,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
 
 import com.glasscube.streamer.R;
  
@@ -66,9 +69,13 @@ public class Authenticator extends Activity {
      
     void login(){
         try{            
-              
-            httpclient=new DefaultHttpClient();
-            httppost= new HttpPost("http://localhost/glasscube/streamer/login.php"); // url of login.php
+        	HttpParams httpParameters = new BasicHttpParams();
+            int timeoutConnection = 10000;
+            HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
+            int timeoutSocket = 10000;
+            HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);  
+            httpclient=new DefaultHttpClient(httpParameters);
+            httppost= new HttpPost("http://www.glasscubehub.com/streamer/login.php"); // url of login.php ; http://localhost/glasscube/streamer/login.php
             
             nameValuePairs = new ArrayList<NameValuePair>(2); // same name value pair for posting method. it is similar to the login.php variables
             nameValuePairs.add(new BasicNameValuePair("username",etUsername.getText().toString().trim()));
@@ -94,12 +101,9 @@ public class Authenticator extends Activity {
                         Toast.makeText(Authenticator.this,"Login Success", Toast.LENGTH_SHORT).show();
                     }
                 });
-                Class ourClass = Class.forName("com.glasscube.streamer.MainActivity");
+                Class ourClass = Class.forName("com.glasscube.streamer.SearchMusic");
                 startActivity(new Intent(Authenticator.this, ourClass));
             }else{
-            	//for debug
-            	//Class ourClass = Class.forName("com.glasscube.streamer.MainActivity");
-                //startActivity(new Intent(Authenticator.this, ourClass));
                 showAlert();                
             }
              

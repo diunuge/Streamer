@@ -24,7 +24,7 @@ public class StartingPoint extends Activity{
 				}catch(InterruptedException ex){
 					ex.printStackTrace();
 				}finally{
-					Intent gotoLogin = new Intent("com.glasscube.streamer.SEARCHMUSIC");
+					Intent gotoLogin = new Intent("com.glasscube.streamer.authenticator.AUTHENTICATOR");
 					startActivity(gotoLogin);
 				}
 			}
