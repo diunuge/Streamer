@@ -62,7 +62,9 @@ public class Authenticator extends Activity {
                         public void run() {
                             login();                          
                         }
-                 }).start();               
+                        
+                 }).start();   
+                 Thread.currentThread().setName("Login Thread");
             }
         });
     }

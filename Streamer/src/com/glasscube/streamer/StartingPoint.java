@@ -30,7 +30,7 @@ public class StartingPoint extends Activity{
 			}
 		};
 		
-		timer.setName("newThread");
+		timer.setName("startingThread");
 		timer.start();
 	}
 	@Override

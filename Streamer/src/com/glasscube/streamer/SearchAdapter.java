@@ -23,6 +23,14 @@ public class SearchAdapter extends BaseAdapter {
 		musicList.add(new MusicData(title, artist));
 	}
 	
+	public void addMusicToList(MusicData aMusicData){
+		musicList.add(aMusicData);
+	}
+	
+	public void addMusicToList(ArrayList<MusicData> musicList){
+		this.musicList = musicList;
+	}
+	
 	public void clearMusicList(){
 		musicList.clear();
 	}
